@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<!-- lightly modified version of example2-formatters.html -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>SlickGrid example 2: Formatters</title>
+  <link rel="stylesheet" href="index_files/slick.grid.css" type="text/css"/>
+  <link rel="stylesheet" href="index_files/jquery-ui-1.8.16.custom.css" type="text/css"/>
+  <link rel="stylesheet" href="index_files/examples.css" type="text/css"/>
+  <style>
+    .cell-title {
+      font-weight: bold;
+    }
+
+    .cell-effort-driven {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<table width="100%">
+  <tr>
+    <td valign="top" width="50%">
+      <div id="myGrid" style="width:600px;height:600px;"></div>
+    </td>
+  </tr>
+</table>
+
+<script src="index_files/lib/firebugx.js"></script>
+
+<script src="index_files/lib/jquery-1.7.min.js"></script>
+<script src="index_files/lib/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="index_files/lib/jquery.event.drag-2.0.min.js"></script>
+
+<script src="index_files/slick.core.js"></script>
+<script src="index_files/slick.formatters.js"></script>
+<script src="index_files/slick.grid.js"></script>
+
+<script>
+    function formatter(row, cell, value, columnDef, dataContext) {
+        return value;
+    }
+
+  var grid;
+  var data = [];
+  var columns = [
+    {id: "job", name: "Job", field: "job", width: 350, cssClass: "cell-title", formatter: formatter},
+    {id: "duration", name: "Duration", field: "duration",  width: 200}
+  ];
+
+  var options = {
+    editable: false,
+    enableAddRow: false,
+    enableCellNavigation: true
+  };
+
+  $(function () {
+    var data = [
+        // { "job": "jbos", "duration": "1 day" }
+        /**{DATA}**/
+    ];
+
+    grid = new Slick.Grid("#myGrid", data, columns, options);
+  })
+</script>
+</body>
+</html>

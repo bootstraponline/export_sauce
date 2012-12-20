@@ -1,0 +1,10 @@
+bin/
+target/
+.settings/
+.classpath
+.project
+*.log
+*.key
+xtend-gen/
+jobs.json
+index.html
