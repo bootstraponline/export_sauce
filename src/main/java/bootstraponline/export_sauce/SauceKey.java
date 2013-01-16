@@ -59,7 +59,8 @@ public final class SauceKey {
 		return key;
 	}
 
-	/** Full URL to sauce. **/
+	/** Full URL to sauce. Default limit is 100 results.
+	    https://saucelabs.com/docs/rest **/
 	public String jobsURL() {
 		if (url != null) {
 			return url;
