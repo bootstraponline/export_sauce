@@ -84,6 +84,7 @@ public class Export {
     }
 
     public static void main(String[] args) throws Exception {
+        writeJobs("jobs.json");
         writeIndex(Paths.get("index/index.html"));
     }
 }
